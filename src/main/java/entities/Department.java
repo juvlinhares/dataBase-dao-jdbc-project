@@ -8,7 +8,7 @@ import lombok.*;
 @Setter
 @ToString
 public class Department {
-private Integer id;
-private String name;
+    private Integer id;
+    private String name;
 
 }

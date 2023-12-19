@@ -1,5 +1,7 @@
 package com.jdbcProject;
 
+import com.jdbcProject.dao.DaoFactory;
+import com.jdbcProject.dao.SellerDao;
 import entities.Department;
 import entities.Seller;
 
@@ -16,6 +18,8 @@ public class Main {
         Department dep = new Department(1, "book");
 
         Seller sel = new Seller(1, "bob", "bob@gmail", sqlDate, 3000.0,  dep);
+
+        SellerDao sellerDao = DaoFactory.createSellerDao();
 
         System.out.println(dep);
 
