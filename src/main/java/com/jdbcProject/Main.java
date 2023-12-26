@@ -1,7 +1,8 @@
 package com.jdbcProject;
 
-import com.jdbcProject.dao.DaoFactory;
-import com.jdbcProject.dao.SellerDao;
+import com.jdbcProject.modelDao.DaoFactory;
+import com.jdbcProject.modelDao.SellerDao;
+import com.jdbcProject.modelDaoJDBC.SellerDaoJDBC;
 import entities.Department;
 import entities.Seller;
 
@@ -13,15 +14,10 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
 
-        LocalDate localDate = new Date(1983, 10, 11).toLocalDate();
-        Date sqlDate = Date.valueOf(localDate);
-        Department dep = new Department(1, "book");
 
-        Seller sel = new Seller(1, "bob", "bob@gmail", sqlDate, 3000.0,  dep);
+        SellerDao sellerDao = DaoFactory.createSellerdao();
 
-        SellerDao sellerDao = DaoFactory.createSellerDao();
-
-        System.out.println(dep);
-
+      Seller seller = sellerDao.findSellerById(3);
+        System.out.println(seller);
         }
     }

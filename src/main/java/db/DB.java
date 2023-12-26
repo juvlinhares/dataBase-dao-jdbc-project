@@ -46,7 +46,7 @@ public class DB {
     }
 
     //desconnection rs e st
-    public void closeStatment(Statement st) {
+    public static void closeStatment(Statement st) {
         if (st != null) {
             try {
                 st.close();
@@ -56,7 +56,7 @@ public class DB {
         }
     }
 
-    public void closeResultSet(ResultSet rs) {
+    public static void closeResultSet(ResultSet rs) {
         if (rs != null) {
             try {
                 rs.close();
