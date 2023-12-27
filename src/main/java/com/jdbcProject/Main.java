@@ -13,11 +13,9 @@ import java.time.LocalDate;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-
-
         SellerDao sellerDao = DaoFactory.createSellerdao();
-
-      Seller seller = sellerDao.findSellerById(3);
+        System.out.println("=== TEST 1: findSeelerById ===");
+        Seller seller = sellerDao.findSellerById(3);
         System.out.println(seller);
         }
     }
